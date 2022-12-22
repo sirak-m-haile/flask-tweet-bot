@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Create a new Retweet Query Setup {% endblock %}</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="title">Hashtags</label>
+        <input type="text" name="hashtags"
+               placeholder="Hashtags starting with #" class="form-control"
+               value="{{ request.form['hashtags'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="content">Tweet Search Start Date and Time</label>
+        <input type="text" name="start_date_time" placeholder="Search start time in ISO 8601 UTC format yyyy-MM-ddThh:mm:ssZ"
+                  class="form-control" value="{{ request.form['start_date_time'] }}" />
+    </div>
+    <div class="form-group">
+        <label for="content">Tweet Search End Date and Time</label>
+        <input type="text" name="end_date_time" placeholder="Search end time in ISO 8601 UTC format yyyy-MM-ddThh:mm:ssZ"
+                  class="form-control" value="{{ request.form['end_date_time'] }}" />
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+{% endblock %}
