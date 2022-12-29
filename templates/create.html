@@ -13,12 +13,12 @@
 
     <div class="form-group">
         <label for="content">Tweet Search Start Date and Time</label>
-        <input type="text" name="start_date_time" placeholder="Search start time in ISO 8601 UTC format yyyy-MM-ddThh:mm:ssZ"
+        <input type="datetime-local" name="start_date_time" placeholder="Search start time in ISO 8601 UTC format yyyy-MM-ddThh:mm:ssZ"
                   class="form-control" value="{{ request.form['start_date_time'] }}" />
     </div>
     <div class="form-group">
         <label for="content">Tweet Search End Date and Time</label>
-        <input type="text" name="end_date_time" placeholder="Search end time in ISO 8601 UTC format yyyy-MM-ddThh:mm:ssZ"
+        <input type="datetime-local" name="end_date_time" placeholder="Search end time in ISO 8601 UTC format yyyy-MM-ddThh:mm:ssZ"
                   class="form-control" value="{{ request.form['end_date_time'] }}" />
     </div>
     <div class="form-group">

@@ -149,6 +149,8 @@ def save_search_query_spec(input):
     hashtags = input.get('hashtags')
     start_date_time = input.get('start_date_time')
     end_date_time = input.get('end_date_time')
+    start_date_time = start_date_time + "Z"
+    end_date_time = end_date_time + "Z"
 
     validate_search_query_input(hashtags, start_date_time, end_date_time)
 

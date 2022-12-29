@@ -1,14 +1,5 @@
-
-import base64
-import hashlib
 import os
-import re
-import json
-import requests
-from requests.auth import AuthBase, HTTPBasicAuth
-from requests_oauthlib import OAuth2Session, TokenUpdated
-from flask import Flask, request, redirect, session, url_for, render_template
-import flash
+from flask import Flask, request, redirect, session, url_for, render_template, flash
 from werkzeug.exceptions import abort
 import main
 
@@ -42,6 +33,7 @@ def edit(id):
     if request.method =='POST':
         input = { 'id': id, **request.form}
         main.save_search_query_spec(input)
+        flash("Update Successfully Saved")
 
     search_query_item = main.get_search_query_spec(id)
     if search_query_item is None:
